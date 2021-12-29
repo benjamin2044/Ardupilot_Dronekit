@@ -1,17 +1,5 @@
 # Ardupilot_Dronekit
 
------------------------------------------------------------------------------------------
-# 리눅스용 윈도우 하위 시스템(Windows Subsystem for Linux, WSL) 활성화 필요
-
-# Microsoft store에서 Ubuntu 설치 (Ubuntu 20.04 LTS)
-
-# New Unix User등록 요청 시 그냥 창 닫기(New Username 등록 없이 root으로 사용 권장)
-
-# Ubuntu 창 열기
-----------------------------------------------------------------------------------------------
-
-순서 
-
 1. apt install python-is-python3
 
 2. apt-get update
