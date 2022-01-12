@@ -16,37 +16,35 @@
 
 8. cd ardupilot/ArduCopter
 
-## root/ardupilot/ArduCopter 안에 가상 Ardupilot compile
+# Compile Ardupilot compile at /root/ardupilot/ArduCopter
 9. /root/ardupilot/Tools/autotest/sim_vehicle.py     
 
-10. Compile 끝난 후 창 닫기 또는 exit (Ctrl + c)
+10. After Compilation, exit (Ctrl + c)
 
-12. 다시 Ubuntu 창 열기
+12. Open Ubuntu window
 
-# compile된 파일 위치로 가기
+# Go to compiled file location
 13. cd /root/ardupilot/build/sitl/bin
 
-# /root/ardupilot/build/sitl/bin에서 가상 arudcopter 드론 실행
+# Run sitl arducopter at /root/ardupilot/build/sitl/bin
 14. ./arducopter -S -I0 --home -35.363261,149.165230,584,353 --model "+" --speedup 1 --defaults /root/ardupilot/Tools/autotest/default_params/copter.parm
 
-15. 다른 Ubuntu 창 열기 (복수의 Ubuntu 실행 가능)
+15. Open another window for running MAVProxy
 
-# Telemetry forwarding/broadcasting, (--out udp:[IP]:[PORT])로 broadcasting 추가 가능
+# Telemetry forwarding/broadcasting
 16. mavproxy.py --master tcp:127.0.0.1:5760 --out udp:127.0.0.1:14550 --out udp:127.0.0.1:14551 
 
-17. Broadcasting된 IP & Port 중 하나에 MISSION PLANNER 연결, 다른 IP & Port에 MAVSDK 코드 연결하여 실행 및 테스트.
-    예:port 14550에서 MISSION PlANNER 연결
+17. Connect MISSION PLANNER to one of the broadcasted IP & Port, and connect Dronekit or MAVSDK to another broadcasted IP & Port.
 
-18. 다시 실행 시 step 13부터 16까지 반복
+18. Run step 13 to 16 if program or PC is restarted.
 
-19. 명령 간략화를 위해 alias 사용
+19. Using alias shortcut
     nano ~/.bashrc
     alias sitl='/root/ardupilot/build/sitl/bin/arducopter -S -I0 --home -35.363261,149.165230,584,353 --model "+" --speedup 1 --defaults /root/ardupilot/Tools/autotest/default_params/copter.parm'
-    저장 후 
+    - save and source bashrc 
     source ~/.bashrc
 
-20. sitl 명령으로 ardupilot 실행.
-
+20. type sitl and run ardupilot.
 
 
 SITL(Software in the Loop) Installation(Windows)
